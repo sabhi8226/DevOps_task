@@ -1,0 +1,20 @@
+apVersion: v1
+kind: Config 
+
+clusters:
+- cluster:
+    certificate-authority: /root/ca.crt
+    server: https://192.168.56.101:8443
+  name:abhi
+
+contexts:
+- context:
+    cluster: mycluster
+    user: abhi
+
+users:
+- name: abhi
+  user:
+    client-certificate: /root/client.crt
+    client-ket: /root/client.key
+ 
